@@ -11,8 +11,10 @@ func Uppercase(s string) string {
 	return strings.ToUpper(s)
 }
 
-func Lowercase(s string) string {
-	return strings.ToLower(s)
+func Prefixer(prefix string) TransformFunc {
+	return func(s string) string {
+		return prefix + s
+	}
 }
 
 func transformString(s string, fn TransformFunc) string {
@@ -21,5 +23,5 @@ func transformString(s string, fn TransformFunc) string {
 
 func main() {
 	fmt.Println(transformString("Aditya", Uppercase))
-	fmt.Println(transformString("Aditya", Lowercase))
+	fmt.Println(transformString("Sharma", Prefixer("Aditya")))
 }
