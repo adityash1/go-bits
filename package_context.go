@@ -24,8 +24,8 @@ func fetchUserID() (string, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Millisecond*100)
 	defer cancel()
 
-	val := ctx.Value("username")
-	fmt.Println("the value = ", val)
+	// val := ctx.Value("username")
+	// fmt.Println("the value = ", val)
 
 	type result struct {
 		userId string
